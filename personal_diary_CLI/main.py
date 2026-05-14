@@ -1,4 +1,4 @@
-diary = []
+import json
 
 def add_entry():
 
@@ -13,12 +13,22 @@ def add_entry():
 def view_entry():
   print("===== ALL ENTRIES =====")
 
-  for i in diary:
+  for i in load_entries():
     for key,value in i.items():
       print(key,value)
 
 def exit_program():
   return "Goodbye"
+
+def save_entries():
+  with open('diary.json' , 'w') as f:
+    json.dump(diary,f,indent=4)
+
+def load_entries():
+  with open('diary.json' , 'r') as f:
+    content_of_json = json.load(f)
+
+  return content_of_json
 
 def main():
 
@@ -45,6 +55,9 @@ def main():
       exit_program()
       break
 
+  save_entries()
+
+diary = load_entries()
 main()
 
 
