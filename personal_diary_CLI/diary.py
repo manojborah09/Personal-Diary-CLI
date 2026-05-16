@@ -30,8 +30,14 @@ def delete_entry():
 
   show_entries()
 
-  index_to_delete = int(input("Enter the index to delete : "))
-  diary.pop(index_to_delete-1)
+  try:
+    index_to_delete = int(input("Enter the index to delete : "))
+    diary.pop(index_to_delete-1)
+
+    print(f"Index {index_to_delete} is Successfully Deleted")
+
+  except IndexError:
+    print("Please ! Enter a Valid Index ")
 
 def search_entry():
   # function to search entry using keyword
@@ -45,4 +51,7 @@ def search_entry():
 
       for key,value in entry.items():
         print(key,value)
+
+  else:
+    print("====== No Match Found ======")
 

@@ -10,25 +10,30 @@ def main():
   print("1. Add Entry\n2. Show Entries\n3. Delete Entry\n4. Search Entry\n5. Exit")
 
   while True:
+    try:
+      option = int(input("Enter an option : "))
+    
+      if option == 1:
+        add_entry()
 
-    option = int(input("Enter an option : "))
+      elif option == 2:
+        show_entries()
 
-    if option == 1:
-      add_entry()
+      elif option == 3:
+        delete_entry()
+        
+      elif option == 4:
+        search_entry()
 
-    elif option == 2:
-      show_entries()
+      elif option == 5:
+        print("Goodbye!")
+        break
 
-    elif option == 3:
-      delete_entry()
-      
-    elif option == 4:
-      search_entry()
+      else :
+        print("Please ! Enter a Valid Option ")
 
-    elif option == 5:
-      print("Goodbye!")
-
-      break
+    except ValueError :
+      print("Please ! Enter a Valid Option ")
 
     save_entries()
     

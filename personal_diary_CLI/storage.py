@@ -9,8 +9,11 @@ def save_entries():
 
 def load_entries():
   # function to use the data inside the json file and convert to pyhton object whenwver needed
+  try:
+    with open('personal_diary_CLI/diary.json' , 'r') as f:
+      content_of_json = json.load(f)
+      return content_of_json
 
-  with open('personal_diary_CLI/diary.json' , 'r') as f:
-    content_of_json = json.load(f)
-
-  return content_of_json
+  except FileNotFoundError :
+    save_entries()
+    return []
