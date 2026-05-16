@@ -1,14 +1,7 @@
 [
     {
-        "title": "breakfast",
-        "content": "eggs"
-    },
-    {
         "title": "lunch",
-        "content": "rice"
-    },
-    {
-        "title": "dinner",
-        "content": "chicken"
+        "content": "eggs",
+        "time": "2026-05-16T13:48:49.295926"
     }
 ]

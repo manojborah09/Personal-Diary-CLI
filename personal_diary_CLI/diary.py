@@ -1,12 +1,14 @@
 from data import *
 from storage import *
+import datetime
 
 def add_entry():
   # function to input data or entry
 
   entry = { 
     'title' : input('Enter Title : '),
-    'content' : input('Enter Content : ')
+    'content' : input('Enter Content : '),
+    'time' : datetime.datetime.today().isoformat()
   }
 
   diary.append(entry)
@@ -18,7 +20,10 @@ def show_entries():
 
   for i in load_entries():
     for key,value in i.items():
-      print(key,value)
+      print(f"{key.upper()} : {value}")
+     
+    print("========================")
+ 
 
 def delete_entry():
   # function to delete entry according to the indices
